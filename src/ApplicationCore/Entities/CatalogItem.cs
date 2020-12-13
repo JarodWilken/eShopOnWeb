@@ -21,10 +21,10 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities
 
         public CatalogItem(int catalogTypeId, 
             int catalogBrandId, 
-            string description, 
+            string description,
             string color,
             string name, 
-            decimal price, 
+            decimal price,
             string pictureUri)
         {
             CatalogTypeId = catalogTypeId;
