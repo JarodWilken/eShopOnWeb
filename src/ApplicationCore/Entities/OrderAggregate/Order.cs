@@ -48,5 +48,27 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities.OrderAggregate
             }
             return total;
         }
+
+        public decimal Tax()
+        {
+            var totalTax = 0m;
+            var tax = .06m;
+            foreach (var item in _orderItems)
+            {
+                totalTax += (item.UnitPrice * item.Units) * tax;
+            }
+            return totalTax;
+        }
+
+        public decimal GrandTotal()
+        {
+            var grandTotal = Total() + Tax();
+            //foreach (var item in _orderItems)
+            //{
+            //    grandTotal += item.UnitPrice * item.Units;
+            //}
+
+            return grandTotal;
+        }
     }
 }

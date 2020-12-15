@@ -13,6 +13,8 @@
                 <section class="esh-orders-detail-title col-xs-3">Order number</section>
                 <section class="esh-orders-detail-title col-xs-3">Date</section>
                 <section class="esh-orders-detail-title col-xs-2">Total</section>
+                <section class="esh-orders-detail-title col-xs-2">Tax</section>
+                <section class="esh-orders-detail-title col-xs-2">GrandTotal</section>
                 <section class="esh-orders-detail-title col-xs-3">Status</section>
             </article>
 
@@ -20,6 +22,8 @@
                 <section class="esh-orders-detail-item col-xs-3">@Model.OrderNumber</section>
                 <section class="esh-orders-detail-item col-xs-3">@Model.OrderDate</section>
                 <section class="esh-orders-detail-item col-xs-2">$@Model.Total.ToString("N2")</section>
+                <section class="esh-orders-detail-item col-xs-2">$@Model.Tax.ToString("N2")</section>
+                <section class="esh-orders-detail-item col-xs-2">$@Model.GrandTotal.ToString("N2")</section>
                 <section class="esh-orders-detail-item col-xs-3">@Model.Status</section>
             </article>
         </section>
@@ -66,11 +70,15 @@
             <article class="esh-orders-detail-titles esh-basket-titles--clean row">
                 <section class="esh-orders-detail-title col-xs-9"></section>
                 <section class="esh-orders-detail-title col-xs-2">TOTAL</section>
+                <section class="esh-orders-detail-title col-xs-2">TAX</section>
+                <section class="esh-orders-detail-title col-xs-2">GRANDTOTAL</section>
             </article>
 
             <article class="esh-orders-detail-items row">
                 <section class="esh-orders-detail-item col-xs-9"></section>
                 <section class="esh-orders-detail-item esh-orders-detail-item--mark col-xs-2">$ @Model.Total.ToString("N2")</section>
+                <section class="esh-orders-detail-item esh-orders-detail-item--mark col-xs-2">$ @Model.Tax.ToString("N2")</section>
+                <section class="esh-orders-detail-item esh-orders-detail-item--mark col-xs-2">$ @Model.GrandTotal.ToString("N2")</section>
             </article>
         </section>
     </div>
