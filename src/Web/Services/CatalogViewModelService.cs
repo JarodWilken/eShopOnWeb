@@ -21,6 +21,7 @@ namespace Microsoft.eShopWeb.Web.Services
         private readonly IAsyncRepository<CatalogItem> _itemRepository;
         private readonly IAsyncRepository<CatalogBrand> _brandRepository;
         private readonly IAsyncRepository<CatalogType> _typeRepository;
+        private readonly IAsyncRepository<CatalogType> _colorRepository;
         private readonly IUriComposer _uriComposer;
 
         public CatalogViewModelService(
@@ -28,12 +29,14 @@ namespace Microsoft.eShopWeb.Web.Services
             IAsyncRepository<CatalogItem> itemRepository,
             IAsyncRepository<CatalogBrand> brandRepository,
             IAsyncRepository<CatalogType> typeRepository,
+            IAsyncRepository<CatalogColors> colorRepository,
             IUriComposer uriComposer)
         {
             _logger = loggerFactory.CreateLogger<CatalogViewModelService>();
             _itemRepository = itemRepository;
             _brandRepository = brandRepository;
             _typeRepository = typeRepository;
+           
             _uriComposer = uriComposer;
         }
 
